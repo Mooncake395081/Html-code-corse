@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shay's Portfolio - Project One</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F5F5F5;
+            color: #1D1D1B;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #FF0000;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #F5F5F5;
+            text-decoration: underline;
+        }
+
+        nav.navbar {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            background-color: #00ADEF;
+            padding: 10px;
+            border-radius: 6px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 20px;
+        }
+
+        nav.navbar a {
+            color: #F5F5F5;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+
+        nav.navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #FF8A00;
+            color: #1D1D1B;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #00ADEF;
+            text-decoration: underline;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            position: relative;
+            list-style: none;
+            padding-left: 0;
+            padding-right: 25px;
+            margin: 0;
+        }
+
+        .card li::before {
+            content: "✔️";
+            position: absolute;
+            right: 0;
+            color: #00ADEF;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            background-color: #1D1D1B;
+            color: #F5F5F5;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .card h2 {
+                font-size: 1.3em;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #FF0000;
+            color: #F5F5F5;
+            padding: 10px 14px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
+</head>
+
+<body>
+    <a id="top"></a>
+    <header>
+        <h1> תרגילים לפי אזור גוף </h1>
+    </header>
+
+    <nav class="navbar">
+        <a href="#chest">חזה</a>
+        <a href="#back">גב</a>
+        <a href="#legs">רגליים</a>
+        <a href="#shoulders">כתפיים</a>
+        <a href="#arms">ידיים</a>
+        <a href="#abs">בטן</a>
+    </nav>
+
+    <main class="grid-container">
+        <section id="chest" class="card">
+            <h2> חזה</h2>
+            <ul>
+                <li><strong>לחיצת ספסל ישר (Barbell Bench Press):</strong> שכבו על ספסל שטוח, אחזו במוט ברוחב כתפיים,
+                    הורידו את המוט
+                    אל החזה ודחפו חזרה למעלה.</li>
+                <li><strong>לחיצת ספסל עם משקולות (Dumbbell Bench Press):</strong> שכבו על ספסל שטוח, אחזו בדאמבלים ליד
+                    הכתפיים,
+                    דחפו מעלה ושמרו על שליטה בהורדה.</li>
+                <li><strong>לחיצת ספסל שיפוע עליון (Incline Barbell Bench Press):</strong> שיפוע של כ־30°, הורידו את
+                    המוט אל עליון
+                    החזה וגלו חזרה למעלה.</li>
+                <li><strong>לחיצת שיפוע עליון עם משקולות (Incline Dumbbell Press):</strong> שכבו על ספסל בשיפוע כ־30°,
+                    הרימו את
+                    הדאמבלים מכתפיים ליישור הידיים והורידו באיטיות.</li>
+                <li><strong>לחיצת ספסל שיפוע תחתון (Decline Barbell Bench Press):</strong> שיפוע של כ־15° כלפי מטה,
+                    הורידו את המוט
+                    אל התחתית של החזה ודחפו מעלה.</li>
+                <li><strong>לחיצת שיפוע תחתון עם משקולות (Decline Dumbbell Press):</strong> שכבו בדקליין, אחזו בדאמבלים
+                    ליד הכתפיים,
+                    דחפו מעלה ושמרו על יציבות.</li>
+                <li><strong>פוש-אפ רגיל (Push-Up):</strong> גוף בקו ישר, ידיים מתחת לכתפיים, הורידו חזה קרוב לרצפה וגלו
+                    מעלה.</li>
+                <li><strong>פוש-אפ רחב (Wide Push-Up):</strong> ידיים רחבות יותר מרוחב הכתפיים כדי להעמיס יותר על החלק
+                    החיצוני של
+                    החזה.</li>
+                <li><strong>פוש-אפ בעליה (Incline Push-Up):</strong> ידיים על משטח מוגבה, הורידו חזה למשטח והחזירו
+                    למעלה.</li>
+                <li><strong>פוש-אפ בירידה (Decline Push-Up):</strong> כפות רגליים על משטח מוגבה, ידיים על הרצפה, הפעלת
+                    החזה העליון.
+                </li>
+                <li><strong>ארצ’ר פוש-אפ (Archer Push-Up):</strong> הורדת משקל לצד אחד עם יד מקופלת לצד והיד השנייה
+                    מתיישרת,
+                    לסירוגין.</li>
+                <li><strong>פוש-אפ בצורת T (T Push-Up):</strong> בסיום כל חזרה הרימו אחת מהידיים אל הצד כדי ליצור צורת T
+                    עם הגוף.
+                </li>
+                <li><strong>דיפס לחזה (Chest Dips):</strong> נתלים על המקביליות, נוטים מעט קדימה, מורידים גוף עד מרפקים
+                    ב־90°
+                    ודוחפים חזרה.</li>
+                <li><strong>פרפר עם משקולות (Dumbbell Fly):</strong> שכבו על ספסל שטוח, משקולות בידיים ישרות מעל החזה,
+                    פתחו ידיים
+                    לצדדים והחזירו לאט.</li>
+                <li><strong>פרפר במכונה (Pec Deck Machine Fly):</strong> שבו במכונה, מרפקים בזווית קלה, צמצמו ידיים עד
+                    מפגש באמצע
+                    והחזירו בשליטה.</li>
+                <li><strong>פרפר בכבל (Cable Fly):</strong> עמדו בין שתי עמדות כבל, פתחו ידיים בקשת לפגישה מול החזה
+                    והחזירו באיטיות.
+                </li>
+                <li><strong>פרפר שיפוע עליון (Incline Cable Fly):</strong> ידיות כבל נמוכות, שיפוע של כ־30°, פתחו ידיים
+                    כלפי מעלה
+                    והחזירו באטיות.</li>
+                <li><strong>פולאובר עם משקולת (Dumbbell Pullover):</strong> שכבו על ספסל שטוח עם הראש מעט מתחת לקצה,
+                    משקולת בשתי
+                    ידיים מעל החזה, הורידו מאחורי הראש והחזירו.</li>
+                <li><strong>פוש-אפ מתפוצץ (Clap Push-Up):</strong> בפוש-אפ רגיל, בשלב העלייה דחפו במהירות כך שהידיים
+                    עוזבות את
+                    הרצפה, קפצו קליק באוויר ונחתו בשליטה.</li>
+                <li><strong>פוש-אפ על כדור פיטבול (Medicine Ball Push-Up):</strong> יד אחת על כדור פיטבול, השנייה על
+                    הרצפה, הורידו
+                    גוף והחליפו צד בכל חזרה.</li>
+            </ul>
+        </section>
+
+        <section id="back" class="card">
+            <h2> גב</h2>
+            <ul>
+                <li><strong>דד־ליפט קלאסי (Deadlift):</strong> עמדו עם רגליים ברוחב הירכיים, אחזו מוט קרוב לגוף, הרימו
+                    ע"י יישור
+                    הירכיים והגב ושמרו על מוט קרוב לשוקיים.</li>
+                <li><strong>דד־ליפט רומני (Romanian Deadlift):</strong> החזיקו מוט או משקולות, כופפו מעט בברכיים, הטו את
+                    המותן קדימה
+                    ושמרו על גב ישר בכל התנועה.</li>
+                <li><strong>חתירה כפופה עם מוט (Bent-Over Barbell Row):</strong> כפוף במותן עם גב שטוח, משכו את המוט
+                    לכיוון הבטן
+                    תחתית והורידו בשליטה.</li>
+                <li><strong>חתירה כפופה עם משקולות (Bent-Over Dumbbell Row):</strong> כפוף במותן, משקולת בכל יד, משכו כל
+                    יד בנפרד
+                    לכיוון המותן ושמרו על מרפקים קרובים לגוף.</li>
+                <li><strong>חתירה במכונת T (T-Bar Row):</strong> אחזו במוט T, כפפו במותן והמשיכו למשוך את המוט לעבר החזה
+                    והורידו
+                    בשליטה.</li>
+                <li><strong>חתירה עם משקולת יד אחת (Single-Arm Dumbbell Row):</strong> הניחו ברך ויד על ספסל, כידון ביד
+                    השנייה, משכו
+                    לכיוון המותן והורידו באיטיות.</li>
+                <li><strong>מתח (Pull-Up):</strong> נתלים על מתח עם אחיזה רחבה, משכו את הגוף למעלה עד שהסנטר מעל המוט
+                    והורידו
+                    בשליטה.</li>
+                <li><strong>צ’ין-אפ (Chin-Up):</strong> נתלים על מתח עם כפות ידיים פונות אליכם, משכו עד שהסנטר מעל המוט
+                    והורידו לאט.
+                </li>
+                <li><strong>משיכת מפל (Lat Pulldown):</strong> ישבו במכונה, אחזו במוט רחב, משכו מטה עד לחזה ושמרו על
+                    קמור קל בגב.
+                </li>
+                <li><strong>חתירה עם כבל (Seated Cable Row):</strong> ישבו על מכונת כבל, אחזו בידית, משכו אל הבטן ושמרו
+                    על מרפקים
+                    קרובים וצוואר ניטרלי.</li>
+                <li><strong>חתירת הפוכה (Inverted Row):</strong> שכבו מתחת למוט נמוך, אחזו בו, משכו את הגוף כלפי המוט
+                    ושמרו על קו
+                    ישר מגוף.</li>
+                <li><strong>סופרמן (Superman):</strong> שכבו עם פנים למטה, הרימו יחדית ידיים ורגליים מהקרקע ושמרו כמה
+                    שניות.</li>
+                <li><strong>הארכת גב על ספסל (Back Extension):</strong> שכבו על ספסל היפר-אקסטנשן, הורידו פלג גוף עליון
+                    והעלו עד
+                    למקשה אחת עם הישבן.</li>
+                <li><strong>גוד מורנינג (Good Morning):</strong> החזיקו מוט על הכתפיים, הטו את המותן קדימה ושמרו על גב
+                    ישר, והחזירו
+                    למתיישב.</li>
+                <li><strong>חתירת רנג’ייד (Renegade Row):</strong> במצב פוש-אפ עם משקולות, משכו כל יד לסירוגין לכיוון
+                    המותן ושמרו על
+                    יציבות גוף.</li>
+                <li><strong>משיכת פנים בכבל (Face Pull):</strong> עומדים מול עמדת כבל עם חבל, משכו לעבר הפנים ושמרו על
+                    מרפקים גבוהים
+                    לצדדים.</li>
+                <li><strong>משיכת זרוע ישרה (Straight-Arm Pulldown):</strong> עמדו מול כדור כבל, ידיים ישרות, משכו מטה
+                    עם ידיים
+                    ישרות ושמרו על כתפיים יציבות.</li>
+                <li><strong>רק פול (Rack Pull):</strong> כמו דד־ליפט אבל מהמוט ברמה גבוהה (על רגלי הרמת מתקן), הרימו
+                    ושמרו על גב
+                    שטוח.</li>
+                <li><strong>חתירה על ספסל (Seal Row):</strong> שכבו על ספסל אופקי עם הפנים מטה, חתרו עם מוט או משקולות
+                    לעבר החזה
+                    והורידו בשליטה.</li>
+                <li><strong>פתיחת גומייה (Band Pull-Apart):</strong> אחזו גומייה בשתי ידיים לפנים, פתחו לצדדים עד למתיחה
+                    מלאה ושמרו
+                    על גב והכתפיים נינוחות.</li>
+            </ul>
+        </section>
+
+        <section id="legs" class="card">
+            <h2> רגליים</h2>
+            <ul>
+                <li><strong>סקוואט קלאסי (Bodyweight Squat):</strong> עמדו עם רגליים ברוחב המותניים, הורידו את הישבן
+                    לאחור כמו יושבים על
+                    כסא, והעלו חזרה תוך שמירה על חזה מורם.</li>
+                <li><strong>סקוואט עם משקולת חזה (Goblet Squat):</strong> החזיקו משקולת או קטלבל בידיים מול החזה, בצעו
+                    סקוואט רגיל
+                    והחזירו במכוון חזרה למעלה.</li>
+                <li><strong>לאנז' קדמי (Forward Lunge):</strong> צעדו קדימה, הורידו את הברכיים עד ל־90° ולחצו חזרה עם
+                    העקב של הרגל
+                    המובילה.</li>
+                <li><strong>לאנז' אחורי (Reverse Lunge):</strong> צעדו לאחור בעקבית, הורידו את הברכיים למטה וחזרו לעמידה
+                    עם דחיפה ברגל
+                    הקדמית.</li>
+                <li><strong>לאנז' צדדי (Side Lunge):</strong> צעדו הצידה, הורידו ישבן ונמכו לכיוון רגל אחת, חזרו למרכז
+                    וחזרו על הצד
+                    השני.</li>
+                <li><strong>ספליט סקווט בולגרי (Bulgarian Split Squat):</strong> הרימו רגל אחורית על ספסל, הורידו גוף
+                    למטה עם רגל אחת
+                    בלבד וחזרו למעלה.</li>
+                <li><strong>דד־ליפט רומני ברגל אחת (Single-Leg Romanian Deadlift):</strong> עמדו על רגל אחת, כופפו
+                    במותן, הורידו משקולות
+                    קרוב לרגל והתייצבו חזרה.</li>
+                <li><strong>דד-ליפט רומני דו-רגלי (Romanian Deadlift):</strong> החזיקו משקולות, כופפו מעט בברכיים, הטו
+                    את המותן קדימה
+                    והחזירו למתיישב עם גב ישר.</li>
+                <li><strong>עליות עקב בעמידה (Standing Calf Raise):</strong> עמדו על קצה משטח גבוה (חתיכה של מדרגה),
+                    הרימו עקבים לשמיים
+                    והורידו לאט.</li>
+                <li><strong>עליות עקב בישיבה (Seated Calf Raise):</strong> שבו עם משקל על הירכיים, הרימו עקבים
+                    מהקרסוליים והורידו
+                    לשליטה.</li>
+                <li><strong>Step-Up על קופסה (Step-Up):</strong> הציבו רגל על קופסה או ספסל, דחפו דרך העקב של הרגל שעל
+                    הקופסה, הורידו
+                    חזרה בשליטה.</li>
+                <li><strong>סקוואט סומו רחב (Sumo Squat):</strong> עמדו במצב רחב עם כפות רגל פונות החוצה, הורידו ישבן
+                    ובצקו חזרה מבלי
+                    לנתק עקבים מהקרקע.</li>
+                <li><strong>פיסטול סקווט (Pistol Squat):</strong> סקווט על רגל אחת כשעשה הנגדי מורם ישר, שימו לב לשמירה
+                    על יציבות
+                    והורידו חזרה לאט.</li>
+                <li><strong>היפ טראסט על ספסל (Hip Thrust):</strong> גב על ספסל, רגליים כפופות, הרימו ירכיים כלפי מעלה
+                    עד קו ישר
+                    מהכתפיים לברכיים.</li>
+                <li><strong>גלוט ברידג' על רצפה (Glute Bridge):</strong> שוכבים על הגב, ברכיים כפופות, הרימו ירכיים כלפי
+                    מעלה והחזיקו
+                    שנייה לפני יורד.</li>
+                <li><strong>וול סיט (Wall Sit):</strong> הגב נצמד לקיר, רגליים בזווית 90°, החזיקו את העמדה כמה שיותר
+                    זמן.</li>
+                <li><strong>דונקי קיק (Donkey Kick):</strong> בעמידת ארבע, הרימו רגל אחת כלפי מעלה כשהברך כפופה, הורידו
+                    בשליטה.</li>
+                <li><strong>פייר הידראנט (Fire Hydrant):</strong> בעמידת ארבע, הרימו ברך לצד במנוע, כאילו הכלב עושה פייר
+                    הידראנט.</li>
+                <li><strong>קרטסי לאנז' (Curtsy Lunge):</strong> צעדו ברגל אחת מאחורי ומצד כפוף, הורידו ישבן והחזירו עם
+                    דחיפה.</li>
+                <li><strong>נורדיק המסטרינג קרל (Nordic Hamstring Curl):</strong> ברכיים על משטח, שלטו בירידה קדימה עד
+                    שאפשר, החזירו
+                    חזרה בעזרת כפות ידיים או כוח איטי.</li>
+            </ul>
+        </section>
+
+        <section id="shoulders" class="card">
+            <h2> כתפיים</h2>
+            <ul>
+                <li><strong>לחיצת כתפיים בעמידה (Standing Military Press):</strong> עמוד זקוף עם מוט על הכתפיים, דחוף
+                    כלפי מעלה
+                    ובקרה בהורדה.</li>
+                <li><strong>לחיצת כתפיים בישיבה (Seated Dumbbell Shoulder Press):</strong> שבו עם משקולות בכל יד, דחפו
+                    מעל הראש
+                    ושמרו על גב ישר.</li>
+                <li><strong>לחיצת ארנולד (Arnold Press):</strong> מתחילים בידיים קרובות לחזה עם כפות פונות אליכם,
+                    מסובבים החוצה תוך
+                    דחיפה כלפי מעלה.</li>
+                <li><strong>לחיצת לנדמיין (Landmine Press):</strong> הדקו קצה מוט לקרקע, אחזו בקצה החופשי ודחפו אלכסונית
+                    כלפי מעלה.
+                </li>
+                <li><strong>לחיצת כתף יד אחת (Single-Arm Overhead Press):</strong> עמדו על רגליים צרות, דחפו משקולת ביד
+                    אחת מעל הראש
+                    ואיזנו את הגוף.</li>
+                <li><strong>הרמת צד משקולות (Dumbbell Lateral Raise):</strong> עמוד זקוף, הרימו משקולות לצד עד לגובה
+                    הכתפיים והורידו
+                    בשליטה.</li>
+                <li><strong>הרמת קדימה משקולות (Dumbbell Front Raise):</strong> החזיקו משקולות מול הירכיים, הרימו קדימה
+                    עד לגובה
+                    הכתפיים והורידו באיטיות.</li>
+                <li><strong>הרמת צד בישיבה (Seated Lateral Raise):</strong> שבו על ספסל, הרימו משקולות לצד עם אגף קל
+                    לכיפוף ברך וגב
+                    יציב.</li>
+                <li><strong>הרמת נטויה קדימה (Bent-Over Reverse Fly):</strong> כפוף במותן, הרימו משקולות לצד בגב ישר כדי
+                    לחטב את
+                    הדלתואיד האחורי.</li>
+                <li><strong>משיכת פנים בכבל (Cable Face Pull):</strong> עם כבל בגובה פנים, משכו אל הפנים תוך ריווח
+                    מרפקים לאחור.
+                </li>
+                <li><strong>משיכת פנים עם גומייה (Band Face Pull):</strong> עיגנו גומייה, אחזו בשני הצדדים ומשכו לעבר
+                    הפנים באותה
+                    תנועה כבלים.</li>
+                <li><strong>עליות כתפיים משקולות (Dumbbell Shrugs):</strong> עמוד זקוף, הרימו כתפיים כלפי אוזניים
+                    והורידו במתכוון.
+                </li>
+                <li><strong>עליות כתפיים עם מוט (Barbell Shrugs):</strong> החזיקו מוט בידיים ישרות, הרימו כתפיים ולאחר
+                    מכן הורידו
+                    בשליטה.</li>
+                <li><strong>שורה זקופה עם מוט (Upright Row):</strong> החזיקו מוט בידיים קרובות, הרימו עד מתחת לסנטר
+                    בעזרת המרפקים.
+                </li>
+                <li><strong>סקפשן (Scaption Raise):</strong> הרימו משקולות בזווית של כ־30° קדימה–צדדי עד לגובה הכתפיים
+                    והורידו.</li>
+                <li><strong>פייק פוש-אפ (Pike Push-Up):</strong> גוף בצורת V הפוך, ידיים רחוקות מהרגליים, הורידו ראש
+                    וחזרו למעלה.
+                </li>
+                <li><strong>פוש-אפ על הקיר (Wall Handstand Push-Up):</strong> עמדו על ידיים מול הקיר, הורידו ראש לכיוון
+                    הקיר ודחפו
+                    חזרה.</li>
+                <li><strong>הרמת צלחת (Plate Raises):</strong> אחזו צלחת בחזית, הרימו מעל הראש ושמרו על גב יציב.</li>
+                <li><strong>לחיצת קובנית (Cuban Press):</strong> מתחילים ברמת המותניים עם כפיפה קלה במרפקים, סובבים כפות
+                    הידיים מעלה
+                    ומעל הראש.</li>
+                <li><strong>הרמת Y (Y Raise):</strong> שכבו עם פנים כלפי מטה, הרימו משקולות בזווית של Y מעל הראש והורידו
+                    באיטיות.
+                </li>
+            </ul>
+        </section>
+
+        <section id="arms" class="card">
+            <h2> ידיים</h2>
+            <ul>
+                <li><strong>כפיפות מרפקים (Bicep Curls):</strong> עמדו זקוף עם משקולות בכל יד, כופפו מרפקים לאט עד
+                    שהמשקולות ליד
+                    הכתפיים והורידו בשליטה.</li>
+                <li><strong>פטיש קראל (Hammer Curls):</strong> כמו כפיפות מרפקים, אבל כפות הידיים פונות פנימה – כדי
+                    לעבוד על האמה
+                    והבייספס.</li>
+                <li><strong>קונסנטריישן קראל (Concentration Curls):</strong> שבו, הניחו מרפק על הברך, הרימו משקולת ביד
+                    אחת עם פוקוס
+                    מלא על הבייספס.</li>
+                <li><strong>פריצ’ר קראל (Preacher Curls):</strong> ישבו על ספסל זוויתי, נשענו עם מרפקים על המשטח וכיפפו
+                    מרפקים
+                    למשקולת מעל המשטח.</li>
+                <li><strong>זוטמן קראל (Zottman Curls):</strong> כיפוף רגיל עם כפות פונות מעלה, בסיום סובבו כפות והורידו
+                    לאט עם גב
+                    היד מעלה.</li>
+                <li><strong>ריברס קראל (Reverse Curls):</strong> החזיקו משקולות עם כפות הידיים פונות למטה, כופפו מרפקים
+                    והחזירו
+                    בשליטה כדי לחזק האמה.</li>
+                <li><strong>אי-נקליין דאמבבל קראל (Incline Dumbbell Curl):</strong> שכבו על ספסל בזווית של 45°, הרימו
+                    משקולות אל
+                    הכתפיים והורידו לאט.</li>
+                <li><strong>ספיידרמן קראל (Spider Curls):</strong> כפוף על ספסל שטוח עם חזה מקובע, כופפו מרפקים והעלו
+                    משקולות
+                    לצדדים.</li>
+                <li><strong>כפיפות בכבל (Cable Bicep Curl):</strong> עמדו מול עמדת כבל, אחזו בכידון ושלחו מרפקים אחורה
+                    כשמתמקדים
+                    בבייספס.</li>
+                <li><strong>דיפס על ספסל (Bench Dips):</strong> ידיים על ספסל מאחורי גב, רגליים קדימה, הורידו גוף וגלו
+                    חזרה עם דגש
+                    על טרייספס.</li>
+                <li><strong>דיפס במקביל (Parallel Bar Dips):</strong> נתלים על המקביליות, הורידו גוף עד שכתפיים ברמת
+                    המרפקים ודוחפים
+                    חזרה למעלה.</li>
+                <li><strong>סקאל קראשרס (Skull Crushers):</strong> שכבו על ספסל, החזיקו מוט או משקולות מעל חזה, כפפו
+                    מרפקים להורדת
+                    המשקולת מאחורי הראש.</li>
+                <li><strong>פש־אפס יהלום (Diamond Push-Ups):</strong> ידיים קרובות בצורת יהלום מתחת לחזה, הורידו גוף
+                    וטפחו חזרה כדי
+                    לשרוף טרייספס.</li>
+                <li><strong>לחיצת ספסל צרה (Close-Grip Bench Press):</strong> שכיבה על ספסל, ידיים קרובות על המוט, לחיצה
+                    למעלה בעזרת
+                    טרייספס.</li>
+                <li><strong>פש־דאון בכבל (Cable Tricep Pushdown):</strong> עמדו מול עמדת כבל, לחצו את הכידון למטה תוך
+                    שמירה על
+                    מרפקים צמודים לצדדים.</li>
+                <li><strong>ריברס פוש־דאון (Reverse Grip Cable Pushdown):</strong> כמו פוש־דאון, אבל עם כפות ידיים פונות
+                    מעלה כדי
+                    לגוון את הפעלת הטרייספס.</li>
+                <li><strong>טרייספס קיקבק (Tricep Kickbacks):</strong> כפוף במותן, מרפקים מקובעים לצד, השליכו משקולת
+                    לאחור הישרית.
+                </li>
+                <li><strong>אוברהד טרייספס אקס텐שן (Overhead Tricep Extension):</strong> ישיבה או עמידה, משקולת מעל הראש,
+                    כיפוף מרפק
+                    לאחור והחזרה למעלה.</li>
+                <li><strong>פוש־אפ צר (Close-Grip Push-Ups):</strong> פוש־אפ עם ידיים קרובות יותר מתחת לחזה, עבודה כפולה
+                    על טרייספס
+                    ובייספס.</li>
+                <li><strong>כפיפות פרק כף היד (Wrist Curls):</strong> ישיבה עם זרועות מונחות על ברכיים, הרימו והורידו
+                    משקולת באמצעות
+                    פרקי כף היד.</li>
+            </ul>
+        </section>
+
+        <section id="abs" class="card">
+            <h2> בטן</h2>
+            <ul>
+                <li><strong>קרנצ’ קלאסי (Crunch):</strong> שוכבים על הגב, רגליים כפופות, מרימים את פלג הגוף העליון
+                    לכיוון הברכיים
+                    ושומרים על סנטר קרוב לחזה.</li>
+                <li><strong>קרנצ’ הפוך (Reverse Crunch):</strong> שוכבים על הגב, עוקמים ברכיים אל החזה, מרימים את האגן
+                    מהרצפה
+                    ומורידים בשליטה.</li>
+                <li><strong>אופני אוויר (Bicycle Crunch):</strong> שוכבים על הגב, מסובבים את פלג הגוף העליון כך שמרפק
+                    אחד נוגע בברך
+                    הנגדית לסירוגין.</li>
+                <li><strong>הרמת רגליים בשכיבה (Leg Raises):</strong> שוכבים על הגב, מרימים רגליים ישרות למעלה ושולטים
+                    בירידה מתונה.
+                </li>
+                <li><strong>פלנק (Plank):</strong> מתמקמים על האמות, גוף בקו ישר מקודקוד עד עקבים, מחזיקים עמידה ללא
+                    הכתפה.</li>
+                <li><strong>סייד־פלנק (Side Plank):</strong> תומכים על אמה אחת והצד של כף הרגל, גוף במקביל לקרקע,
+                    מחזיקים זמן.</li>
+                <li><strong>V-Up (V-Up):</strong> מתחילים שכובים, מרימים ידיים ורגליים במקביל עד ליצירת צורת V, ומורידים
+                    בשליטה.
+                </li>
+                <li><strong>גלגל בטן (Ab Wheel Rollout):</strong> אוחזים גלגל או כדור כושר, מתגלגלים קדימה ככל שהבטן
+                    פעילה ושומרים
+                    על גב ישר.</li>
+                <li><strong>מטפס הרים (Mountain Climbers):</strong> מתחילים במצב פלנק, מביאים בכל פעם ברך לכיוון החזה
+                    בקצב מהיר.
+                </li>
+                <li><strong>רוסיאן טוויסט (Russian Twist):</strong> יושבים בזווית קלה, מרימים רגליים וחוזרים, מסובבים את
+                    פלג הגוף
+                    לצדדים עם משקל או כדור.</li>
+                <li><strong>הרמת רגליים נתמכות (Hanging Leg Raises):</strong> נתלים על מתח, מרימים רגליים ישרות עד לקו
+                    המותניים
+                    ושולטים בירידה.</li>
+                <li><strong>קיק־פלאטר (Flutter Kicks):</strong> שוכבים על הגב, מרימים רגליים מעט מהרצפה ומחליפים תנועת
+                    “שחייה”
+                    במהירות.</li>
+                <li><strong>סיז’ור קיקס (Scissor Kicks):</strong> כמו פלאטר קיק, אך חוצים רגל אחת מעל השנייה לסירוגין.
+                </li>
+                <li><strong>דד־באג (Dead Bug):</strong> שוכבים על הגב, מניפים יד ורגל נגדית במקביל ושומרים על גב שטוח
+                    ודינמי.</li>
+                <li><strong>טו־טאצ’ (Toe Touches):</strong> שוכבים, רגליים למעלה בזווית 90°, מתכופפים ונוגעים באצבעות
+                    הרגליים
+                    בידיים.</li>
+                <li><strong>הל טאצ’ס (Heel Touches):</strong> שוכבים עם ברכיים כפופות, מרימים קלות אזור כתפיים ונוגעים
+                    בעקבים מצד
+                    לצד.</li>
+                <li><strong>ווינשיילד ווייפרס (Windshield Wipers):</strong> שוכבים על הגב, רגליים ישרות למעלה, מסובבים
+                    אותן מצד לצד
+                    עם שליטה.</li>
+                <li><strong>פלנק עם טוויסט ירכיים (Plank Hip Dips):</strong> במצב פלנק, סובבים את הירך לכיוון הקרקע
+                    ומחזירים,
+                    לסירוגין.</li>
+                <li><strong>קרנצ’ על כדור פיטבול (Swiss Ball Crunch):</strong> שוכבים על כדור פיטבול, רגליים קרובות
+                    לרצפה, מרימים
+                    פלג גוף עליון ושולטים בירידה.</li>
+                <li><strong>גשר עם הרמת ברך (Bridge Knee-Drive):</strong> במצב גשר על הגב, מרימים ברך אל החזה, מורידים
+                    וחוזרים על
+                    הרגל השנייה.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>shay levinson 2025©</p>
+    </footer>
+    <a href="#top" class="back-to-top">🔝</a>
+</body>
+
+</html>
