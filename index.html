@@ -4,38 +4,46 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>shay's portfolio</title>
+    <title>Shay's Portfolio</title>
     <style>
         html {
             scroll-behavior: smooth;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             background-color: #4e5c61;
-            font-family: Arial, Helvetica, sans-serif;
             color: #222;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
+            padding-bottom: 80px;
         }
 
         header {
             background-color: #df0606;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            height: 60px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 40px;
+            justify-content: space-between;
+            padding: 10px 20px;
             color: white;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
         .nav-links {
@@ -46,11 +54,17 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.2s;
         }
 
         .nav-links a:hover {
             opacity: 0.7;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .content-wrapper {
@@ -61,17 +75,17 @@
             gap: 40px;
             background-color: #808384;
             padding: 40px;
+            border: 3px solid black;
             border-radius: 15px;
-            border: solid 3px black;
-            box-shadow: 10px 10px 10px 10px;
         }
 
         .content-wrapper img {
-            width: 300px;
-            border-radius: 8px;
-            flex-shrink: 0;
-            border-radius: 15px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             border: 2px solid black;
+            border-radius: 15px;
+            flex-shrink: 0;
         }
 
         .content-wrapper .text {
@@ -85,129 +99,121 @@
 
         .content-wrapper .text p {
             font-size: 1rem;
-            text-align: left;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: auto;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .item {
+            background-color: #df0606;
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid black;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: filter 0.2s;
+        }
+
+        .item a:hover img {
+            filter: brightness(0.8);
+        }
+
+        .item-header {
+            grid-column: 1 / -1;
+            background-color: #df0606;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 2px solid black;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 5px solid black;
+            margin: 40px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #df0606;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: darkred;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-        }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 20px;
-            background-color: #df0606;
-            color: white;
-        }
+            .hamburger {
+                display: block;
+            }
 
-        .grid-container {
-            width: 1000px;
-            margin: 20px auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 100px 200px 400px 100px;
-            gap: 20px;
-            grid-template-areas:
-                "header header header header"
-                "box1 box2 box3 aside"
-                "main main main aside"
-        }
-
-        .header {
-            grid-area: header;
-        }
-
-        .box1 {
-            grid-area: box1;
-        }
-
-        .box2 {
-            grid-area: box2;
-        }
-
-        .box3 {
-            grid-area: box3;
-        }
-
-        .main {
-            grid-area: main;
-        }
-
-        .aside {
-            grid-area: aside;
-        }
-
-        .item {
-            position: relative;
-            overflow: hidden;
-            background-color: #df0606;
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px solid black;
-        }
-
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 15px;
-            border: 2px solid black;
-            transition: filter 0.15s;
-        }
-
-        .item a:hover {
-            filter: brightness(0.8);
-        }
-
-        .item-header {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            background-color: #df0606;
-            padding: 10px;
-            border-radius: 15px;
-            border: 2px solid black;
-        }
-
-        hr {
-            border: none;
-            border-top: 5px solid black;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: darkred;
-            padding: 10px 20px;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            .content-wrapper {
+                margin: 20px auto;
+            }
         }
     </style>
 </head>
 
 <body>
-    <a id="top"></a>
-
     <header>
         <nav>
-            <i class="fa fa-bars hamburger-icon"></i>
+            <div class="logo">Shay's Portfolio</div>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
+            <div class="hamburger">☰</div>
         </nav>
     </header>
 
@@ -217,39 +223,34 @@
             <h1>Shay the Full Stack Developer</h1>
             <p>
                 Hi there! I’m Shay, a 22-year-old aspiring full-stack developer from Israel who transitioned straight
-                from military
-                service into the world of code. Since my discharge six months ago, I’ve been diving into HTML, CSS,
-                JavaScript (and
-                frameworks like React), as well as Node.js and databases on the back end. By day I balance my full-stack
-                studies with a
-                part-time job, and by evening you’ll find me leveling up my skills—whether it’s building small web apps,
-                hitting the gym
-                for a workout, or recharging by the sea. As a beginner full-stack programmer, I’m passionate about
-                crafting clean,
-                responsive interfaces and learning how to architect solid server-side logic. I love taking on new
-                challenges,
-                collaborating with others, and turning ideas into real, user-friendly projects.
-
+                from military service into the world of code. Since my discharge six months ago, I’ve been diving into
+                HTML,
+                CSS, JavaScript (and frameworks like React), as well as Node.js and databases on the back end. By day I
+                balance
+                my full-stack studies with a part-time job, and by evening you’ll find me leveling up my skills—whether
+                it’s
+                building small web apps, hitting the gym for a workout, or recharging by the sea.
             </p>
         </div>
     </main>
-    <hr>
-    <div id="projects" class="grid-container">
-        <div class="item-header">My Projects</div>
-        <div class="item box1"><img src=gallery/comingsoon.png alt="coming soon" /></div>
-        <div class="item box2"><img src=gallery/comingsoon.png alt="coming soon" /></div>
-        <div class="item box3"><img src=gallery/comingsoon.png alt="coming soon" /></div>
-        <div class="item main"><a href="./menu.html" target="_blank"><img src="gallery/Mooncake.png"
-                    alt="main Image" /></a></div>
-        <div class="item aside"><a href="./projectonefortheportfolio.html" target="_blank"><img src="gallery/gym.png"
-                    alt="Header Image" /></a></div>
-    </div>
 
-    </div>
+    <hr />
+
+    <section id="projects" class="grid-container">
+        <div class="item-header">My Projects</div>
+        <div class="item"><img src="gallery/comingsoon.png" alt="Coming Soon" /></div>
+        <div class="item"><img src="gallery/comingsoon.png" alt="Coming Soon" /></div>
+        <div class="item"><img src="gallery/comingsoon.png" alt="Coming Soon" /></div>
+        <div class="item"><a href="./menu.html" target="_blank"><img src="gallery/Mooncake.png" alt="Mooncake" /></a>
+        </div>
+        <div class="item"><a href="./projectonefortheportfolio.html" target="_blank"><img src="gallery/gym.png"
+                    alt="Gym Project" /></a></div>
+    </section>
 
     <footer>
-        <p>Shay's Portfolio. All rights reserved to the Levinson family &copy; 2025.</p>
+        <p>Shay's Portfolio. All rights reserved © 2025.</p>
     </footer>
+
     <a href="#top" class="back-to-top">🔝</a>
 </body>
 
