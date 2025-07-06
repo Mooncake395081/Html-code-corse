@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>shay's portfolio</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -178,10 +182,24 @@
             border-top: 5px solid black;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: darkred;
+            padding: 10px 20px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 
 <body>
+    <a id="top"></a>
+
     <header>
         <nav>
             <i class="fa fa-bars hamburger-icon"></i>
@@ -216,7 +234,7 @@
         </div>
     </main>
     <hr>
-    <div class="grid-container">
+    <div id="projects" class="grid-container">
         <div class="item-header">My Projects</div>
         <div class="item box1"><img src=gallery/comingsoon.png alt="coming soon" /></div>
         <div class="item box2"><img src=gallery/comingsoon.png alt="coming soon" /></div>
@@ -232,6 +250,7 @@
     <footer>
         <p>Shay's Portfolio. All rights reserved to the Levinson family &copy; 2025.</p>
     </footer>
+    <a href="#top" class="back-to-top">🔝</a>
 </body>
 
 </html>
