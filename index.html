@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shay's portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #4e5c61;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #df0606;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            color: white;
+        }
+
+        .hamburger-icon {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: black;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            background-color: #808384;
+            padding: 40px;
+            border-radius: 15px;
+            border: solid 3px black;
+            box-shadow: 10px 10px 10px 10px;
+        }
+
+        .content-wrapper img {
+            width: 300px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        .content-wrapper .text {
+            flex: 1;
+        }
+
+        .content-wrapper .text h1 {
+            margin-bottom: 16px;
+            font-size: 1.8rem;
+        }
+
+        .content-wrapper .text p {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 20px;
+            background-color: #df0606;
+            color: white;
+        }
+
+        .grid-container {
+            width: 1000px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 200px 400px 100px;
+            gap: 20px;
+            grid-template-areas:
+                "header header header header"
+                "box1 box2 box3 aside"
+                "main main main aside"
+
+        }
+
+        .item {
+            background-color: orangered;
+            padding: 20px;
+            border: 1px solid #fc0;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .box1 {
+            grid-area: box1;
+        }
+
+        .box2 {
+            grid-area: box2;
+        }
+
+        .box3 {
+            grid-area: box3;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .aside {
+            grid-area: aside;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 200px;
+            gap: 10px;
+        }
+
+        .item {
+            overflow: hidden;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+            border: 2px solid black;
+            transition: filter 0.15s;
+        }
+
+        .item a:hover {
+            filter: brightness(0.8);
+        }
+
+        hr {
+            border: none;
+            border-top: 5px solid black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <i class="fa fa-bars hamburger-icon"></i>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <img src="gallery/me.png" alt="Profile picture" />
+        <div id="about" class="text">
+            <h1>Shay the Full Stack Developer</h1>
+            <p>
+                Hi there! I’m Shay, a 22-year-old aspiring full-stack developer from Israel who transitioned straight
+                from military
+                service into the world of code. Since my discharge six months ago, I’ve been diving into HTML, CSS,
+                JavaScript (and
+                frameworks like React), as well as Node.js and databases on the back end. By day I balance my full-stack
+                studies with a
+                part-time job, and by evening you’ll find me leveling up my skills—whether it’s building small web apps,
+                hitting the gym
+                for a workout, or recharging by the sea. As a beginner full-stack programmer, I’m passionate about
+                crafting clean,
+                responsive interfaces and learning how to architect solid server-side logic. I love taking on new
+                challenges,
+                collaborating with others, and turning ideas into real, user-friendly projects.
+
+            </p>
+        </div>
+    </main>
+    <hr>
+    <div class="grid-container">
+        <div class="item header"></div>
+        <div class="item box1"><img src=alt="Header Image" /></div>
+        <div class="item box2"><img src=alt="Header Image" /></div>
+        <div class="item box3"><img src=alt="Header Image" /></div>
+        <div class="item main"><img src=alt="Header Image" /></div>
+        <div class="item aside"><a href="./projectonefortheportfolio.html"><img src="gallery/gym.png"
+                    alt="Header Image" /></a></div>
+    </div>
+
+    </div>
+
+    <footer>
+        <p>Shay's Portfolio. All rights reserved to the Levinson family &copy; 2025.</p>
+    </footer>
+</body>
+
+</html>
