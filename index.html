@@ -34,13 +34,6 @@
             color: white;
         }
 
-        .hamburger-icon {
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: black;
-            display: block;
-        }
-
         .nav-links {
             display: flex;
             gap: 20px;
@@ -119,13 +112,6 @@
                 "header header header header"
                 "box1 box2 box3 aside"
                 "main main main aside"
-
-        }
-
-        .item {
-            background-color: orangered;
-            padding: 20px;
-            border: 1px solid #fc0;
         }
 
         .header {
@@ -152,15 +138,13 @@
             grid-area: aside;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: 200px;
-            gap: 10px;
-        }
-
         .item {
+            position: relative;
             overflow: hidden;
+            background-color: #df0606;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid black;
         }
 
         .item img {
@@ -177,10 +161,16 @@
             filter: brightness(0.8);
         }
 
-        hr {
-            border: none;
-            border-top: 5px solid black;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .item-header {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #df0606;
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid black;
         }
     </style>
 </head>
@@ -221,11 +211,12 @@
     </main>
     <hr>
     <div class="grid-container">
-        <div class="item header"></div>
-        <div class="item box1"><img src=alt="Header Image" /></div>
-        <div class="item box2"><img src=alt="Header Image" /></div>
-        <div class="item box3"><img src=alt="Header Image" /></div>
-        <div class="item main"><img src=alt="Header Image" /></div>
+        <div class="item-header">My Projects</div>
+        <div class="item box1"><img src=gallery/comingsoon.png alt="coming soon" /></div>
+        <div class="item box2"><img src=gallery/comingsoon.png alt="coming soon" /></div>
+        <div class="item box3"><img src=gallery/comingsoon.png alt="coming soon" /></div>
+        <div class="item main"><a href="./menu.html" target="_blank"><img src="gallery/Mooncake.png"
+                    alt="main Image" /></a></div>
         <div class="item aside"><a href="./projectonefortheportfolio.html" target="_blank"><img src="gallery/gym.png"
                     alt="Header Image" /></a></div>
     </div>
