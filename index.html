@@ -231,12 +231,98 @@
             border-radius: 50%;
             text-decoration: none;
         }
+
+        body.light-mode {
+            background-color: #F5E4C3;
+            color: black;
+        }
+
+        body.light-mode .container,
+        body.light-mode .button-img,
+        body.light-mode .language-button-img,
+        body.light-mode .modes-theem-button-img,
+        body.light-mode .about-me-box,
+        body.light-mode .projects-card,
+        body.light-mode .Contact-get-in-touch-form-box,
+        body.light-mode .Contact-get-in-touch-form,
+        body.light-mode #message,
+        body.light-mode #name,
+        body.light-mode #submit,
+        body.light-mode #email,
+        body.light-mode #media,
+        body.light-mode .footer {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        body.dark-mode {
+            background-color: #203750;
+            color: #9aa7bd;
+        }
+
+        #theme-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        @media (max-width: 768px) {
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #007F78;
+            }
+
+            #menuToggle:checked~.nav-links {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .content-wrapper {
+                width: 90%;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .content-wrapper img {
+                width: 150px;
+            }
+
+            .text h1 {
+                font-size: 1.5rem;
+            }
+
+            .text p {
+                font-size: 1rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+                padding: 0 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
         <nav>
+            <button id="theme-toggle">
+                <img class="modes-theem-button-img" id="theme-icon" src="images/dark-mod.svg" alt="dark-mod"
+                    loading="lazy">
+            </button>
             <input type="checkbox" id="menuToggle" />
             <label for="menuToggle" class="hamburger">☰</label>
             <div class="logo">Shay's Portfolio</div>
@@ -314,6 +400,44 @@
     </section>
     <footer>Shay's Portfolio © 2025</footer>
     <a href="#top" class="back-to-top">🔝</a>
+    <script>
+        const themeBtn = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        const body = document.body;
+        const media = document.media;
+
+        function setTheme(isDark) {
+            if (isDark) {
+                body.classList.remove("light-mode");
+                body.classList.add("dark-mode");
+                themeIcon.src = "gallery/Moon.png";
+                localStorage.setItem("theme", "dark");
+            } else {
+                body.classList.remove("dark-mode");
+                body.classList.add("light-mode");
+                themeIcon.src = "gallery/Sun.png";
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        const savedTheme = localStorage.getItem("theme");
+        setTheme(savedTheme === "dark");
+
+        themeBtn.addEventListener("click", () => {
+            const isCurrentlyDark = body.classList.contains("dark-mode");
+            setTheme(!isCurrentlyDark);
+        });
+
+
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+            var navLinks = document.getElementById('myLinks');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        });
+    </script>
 </body>
 
 </html>
