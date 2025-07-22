@@ -18,7 +18,6 @@
 
         body {
             background: #F5E4C3;
-            color: #222;
             font-family: Arial, sans-serif;
             line-height: 1.6;
             padding-bottom: 80px;
@@ -44,6 +43,9 @@
 
         .logo {
             font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-links {
@@ -60,31 +62,6 @@
 
         #menuToggle {
             display: none;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #007F78;
-            }
-
-            #menuToggle:checked+.hamburger+.nav-links {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 12px 0;
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
-            }
         }
 
         .nav-links a {
@@ -118,6 +95,7 @@
         }
 
         .text h1 {
+            text-decoration: underline;
             margin-bottom: 16px;
             color: #007F78;
         }
@@ -125,6 +103,16 @@
         .text p {
             color: #fff;
             margin-top: 16px;
+        }
+
+        p {
+            color: #fff;
+        }
+
+        h2 {
+            margin-bottom: 16px;
+            color: #007F78;
+            text-decoration: underline;
         }
 
         .grid-container {
@@ -237,24 +225,6 @@
             color: black;
         }
 
-        body.light-mode .container,
-        body.light-mode .button-img,
-        body.light-mode .language-button-img,
-        body.light-mode .modes-theem-button-img,
-        body.light-mode .about-me-box,
-        body.light-mode .projects-card,
-        body.light-mode .Contact-get-in-touch-form-box,
-        body.light-mode .Contact-get-in-touch-form,
-        body.light-mode #message,
-        body.light-mode #name,
-        body.light-mode #submit,
-        body.light-mode #email,
-        body.light-mode #media,
-        body.light-mode .footer {
-            background-color: #f0f0f0;
-            color: black;
-        }
-
         body.dark-mode {
             background-color: #203750;
             color: #9aa7bd;
@@ -265,8 +235,19 @@
             height: 30px;
         }
 
-        @media (max-width: 768px) {
+        #theme-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
 
+        #theme-toggle img {
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
             .hamburger {
                 display: block;
             }
@@ -314,6 +295,8 @@
             }
         }
     </style>
+
+
 </head>
 
 <body>
@@ -327,6 +310,7 @@
             <label for="menuToggle" class="hamburger">☰</label>
             <div class="logo">Shay's Portfolio</div>
             <div class="nav-links">
+                <a href="#top">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
@@ -334,7 +318,7 @@
             </div>
         </nav>
     </header>
-    <main class="content-wrapper">
+    <main class="content-wrapper" id="top">
         <img src="gallery/me.png" loading="lazy" alt="Profile picture" />
         <div class="text">
             <h1>Hello, I'm Shay Levinson</h1>
@@ -344,7 +328,7 @@
     <main class="content-wrapper">
         <div id="about" class="text"></div>
         <img src="gallery/metwo.jpg" loading="lazy" alt="Profile picture" />
-        <h1>About Me</h1>
+        <h2>About Me</h2>
         <p>Hey there! I’m Shay Levinson—a Full‑Stack developer student fresh out of the IDF and currently deep in
             the world of
             HTML, CSS, JavaScript and Node.js. I love taking a blank screen and turning it into something
