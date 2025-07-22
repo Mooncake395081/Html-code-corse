@@ -123,6 +123,7 @@
         }
 
         .text p {
+            color: #fff;
             margin-top: 16px;
         }
 
@@ -136,8 +137,7 @@
         }
 
         .item {
-            background: #A0A000;
-            padding: 10px;
+            margin: 10px;
             border-radius: 15px;
             text-align: center;
         }
@@ -328,6 +328,7 @@
             <div class="logo">Shay's Portfolio</div>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -335,45 +336,53 @@
     </header>
     <main class="content-wrapper">
         <img src="gallery/me.png" loading="lazy" alt="Profile picture" />
-        <div id="about" class="text">
+        <div class="text">
             <h1>Hello, I'm Shay Levinson</h1>
             <p>Im a Full Stack developer student and here is my Portfolio</p>
         </div>
     </main>
     <main class="content-wrapper">
+        <div id="about" class="text"></div>
         <img src="gallery/metwo.jpg" loading="lazy" alt="Profile picture" />
-        <div id="about" class="text">
-            <h1>About Me</h1>
-            <p>Hey there! I’m Shay Levinson—a Full‑Stack developer student fresh out of the IDF and currently deep in
-                the world of
-                HTML, CSS, JavaScript and Node.js. I love taking a blank screen and turning it into something
-                interactive, fun and
-                user‑friendly. Whether I’m tweaking pixel‑perfect layouts or wiring up back‑end logic, my goal is always
-                the same:
-                smooth, responsive experiences that people actually enjoy using.
-                When I’m not knee‑deep in code, you’ll usually find me at the gym chasing my next PR, dominating a CS:GO
-                match with my
-                squad, or soaking up the sun and surf at the beach. Fitness and gaming are my two go‑to modes for
-                recharging—one gives
-                me endorphins, the other gives me sweet headshots.
-                I’m a big believer in continuous learning: yesterday it was React hooks, today it’s Express middleware,
-                tomorrow it
-                might be exploring GraphQL or playing with WebAssembly. I’m all about experimenting, messing up, and
-                then figuring out
-                how to make it better. If there’s a cool new API or framework out there, you can bet I’m poking around
-                to see what magic
-                it can add to my projects.
-                Outside of tech, I’m that friend who sends random memes at 2 AM, plans spontaneous road trips, and tries
-                to find the
-                best local falafel spots. I’m always up for a chat—whether it’s swapping coding war stories, sharing
-                workout tips, or
-                debating which CS:GO map has the best smokes.
-                So, if you’re looking for someone who brings energy, curiosity and a dash of humor to every project,
-                let’s connect and
-                build something awesome together!</p>
+        <h1>About Me</h1>
+        <p>Hey there! I’m Shay Levinson—a Full‑Stack developer student fresh out of the IDF and currently deep in
+            the world of
+            HTML, CSS, JavaScript and Node.js. I love taking a blank screen and turning it into something
+            interactive, fun and
+            user‑friendly. Whether I’m tweaking pixel‑perfect layouts or wiring up back‑end logic, my goal is always
+            the same:
+            smooth, responsive experiences that people actually enjoy using.
+            When I’m not knee‑deep in code, you’ll usually find me at the gym chasing my next PR, dominating a CS:GO
+            match with my
+            squad, or soaking up the sun and surf at the beach. Fitness and gaming are my two go‑to modes for
+            recharging—one gives
+            me endorphins, the other gives me sweet headshots.
+            I’m a big believer in continuous learning: yesterday it was React hooks, today it’s Express middleware,
+            tomorrow it
+            might be exploring GraphQL or playing with WebAssembly. I’m all about experimenting, messing up, and
+            then figuring out
+            how to make it better. If there’s a cool new API or framework out there, you can bet I’m poking around
+            to see what magic
+            it can add to my projects.
+            Outside of tech, I’m that friend who sends random memes at 2 AM, plans spontaneous road trips, and tries
+            to find the
+            best local falafel spots. I’m always up for a chat—whether it’s swapping coding war stories, sharing
+            workout tips, or
+            debating which CS:GO map has the best smokes.
+            So, if you’re looking for someone who brings energy, curiosity and a dash of humor to every project,
+            let’s connect and
+            build something awesome together!</p>
         </div>
     </main>
-    <hr />
+    <hr>
+    <section id="skills" class="grid-container">
+        <div class="item-header">My Skills</div>
+        <div class="item"><img src="gallery/html.png" loading="lazy" alt="HTML" /></div>
+        <div class="item"><img src="gallery/css.png" loading="lazy" alt="CSS" /></div>
+        <div class="item"><img src="gallery/js.png" loading="lazy" alt="JavaScript" /></div>
+        <div class="item"><img src="gallery/nodejs.png" loading="lazy" alt="Node.js" /></div>
+    </section>
+    <hr>
     <section id="projects" class="grid-container">
         <div class="item-header">My Projects</div>
         <div class="item"><a href="menu.html" target="_blank"><img src="gallery/Mooncake.png" loading="lazy"
@@ -401,43 +410,38 @@
     <footer>Shay's Portfolio © 2025</footer>
     <a href="#top" class="back-to-top">🔝</a>
     <script>
-        const themeBtn = document.getElementById("theme-toggle");
-        const themeIcon = document.getElementById("theme-icon");
-        const body = document.body;
-        const media = document.media;
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById("theme-toggle");
+            const themeIcon = document.getElementById("theme-icon");
+            const body = document.body;
+            const media = window.matchMedia('(prefers-color-scheme: dark)');
+            const menuToggle = document.getElementById("menuToggle");
+            const navLinks = document.querySelector(".nav-links");
 
-        function setTheme(isDark) {
-            if (isDark) {
-                body.classList.remove("light-mode");
-                body.classList.add("dark-mode");
-                themeIcon.src = "gallery/Moon.png";
-                localStorage.setItem("theme", "dark");
-            } else {
-                body.classList.remove("dark-mode");
-                body.classList.add("light-mode");
-                themeIcon.src = "gallery/Sun.png";
-                localStorage.setItem("theme", "light");
-            }
-        }
+            const setTheme = isDark => {
+                body.classList.toggle("dark-mode", isDark);
+                body.classList.toggle("light-mode", !isDark);
+                themeIcon.src = isDark ? "gallery/Moon.png" : "gallery/Sun.png";
+                localStorage.setItem("theme", isDark ? "dark" : "light");
+            };
 
-        const savedTheme = localStorage.getItem("theme");
-        setTheme(savedTheme === "dark");
+            const savedTheme = localStorage.getItem("theme");
+            setTheme(
+                savedTheme
+                    ? savedTheme === "dark"
+                    : media.matches
+            );
 
-        themeBtn.addEventListener("click", () => {
-            const isCurrentlyDark = body.classList.contains("dark-mode");
-            setTheme(!isCurrentlyDark);
-        });
+            themeBtn.addEventListener("click", () => {
+                setTheme(!body.classList.contains("dark-mode"));
+            });
 
-
-        document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
-            var navLinks = document.getElementById('myLinks');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-            }
+            menuToggle.addEventListener("change", () => {
+                navLinks.style.display = menuToggle.checked ? "flex" : "none";
+            });
         });
     </script>
+
 </body>
 
 </html>
