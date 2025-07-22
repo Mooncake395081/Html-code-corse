@@ -1,0 +1,7 @@
+# robots.txt for Shay's Portfolio
+
+User-agent: *
+Disallow:
+
+# מצביע על מפת האתר
+Sitemap: https://mooncake395081.github.io/Html-code-corse/
