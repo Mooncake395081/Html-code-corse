@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>המסע האפי בלרנקה - טיול 24 שעות</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-color: #fefefe;
+            --text-color: #222;
+            --header-bg: #004d40;
+            --footer-bg: #00332f;
+            --accent-color: #ff6f00;
+            --card-bg: #ffffff;
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0f7fa;
+            --header-bg: #1f1f1f;
+            --footer-bg: #1f1f1f;
+            --accent-color: #00e676;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+
+            transition: background 0.5s;
+        }
+
+        section {
+            padding: 2rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        h1,
+        h2 {
+            color: var(--accent-color);
+            transition: color 0.5s;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.5s, transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ffe0b2;
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            transition: background 0.5s;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 2000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.4s, transform 0.4s;
+        }
+
+        .toggle-btn:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body><button class="toggle-btn" onclick="toggleMode()"> 🌕 / ☀ </button>
+
+    <header>
+        <h1>🌴 טיול 24 שעות בלרנקה - המסע האפי שלך</h1>
+    </header>
+    <section>
+        <h2>📍 פתיחה מעוררת – נמל לרנקה</h2>
+        <div class="card">
+            <p>אתה דורך על האספלט החם של לרנקה. השמש עוד נמוכה, אבל כבר יש בריזה שמריחה ממלח, קפה שחור ומוזיקה
+                קפריסאית
+                קצבית מהמרינה.</p>
+            <p><strong>מיקום:</strong> <a href="https://goo.gl/maps/qZzK1nhuXsCTm1Ws9" target="_blank">Larnaca
+                    Port</a>
+            </p>
+            <ul>
+                <li><strong>אופציות חוף:</strong>
+                    <ul>
+                        <li><a href="https://goo.gl/maps/AYFZg7nsKqFz4WrH9" target="_blank">🏖 Mackenzie Beach</a>
+                        </li>
+                        <li><a href="https://goo.gl/maps/h6x3xkU6h9pboE8Z8" target="_blank">🌴 Finikoudes Beach</a>
+                        </li>
+                        <li><a href="https://goo.gl/maps/NxoxQtNkxZ3hXMH68" target="_blank">🤫 Kastella Beach</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>תחבורה:</strong>
+                    <ul>
+                        <li>🛵 קורקינט/אופניים – 1–2€</li>
+                        <li>🚖 Bolt – 10 דק', ~16€</li>
+                        <li>🚶‍♂ הליכה – אם בא לך רגוע</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h2>🍽 13:00–14:30 – צהריים: תוקפים את הצלחת</h2>
+        <div class="card">
+            <p>הבטן מקרקרת. עכשיו זמן לארוחת צהריים עם טעמים חזקים, בשרים מתובלים, גבינות מותכות, וכל ביס מרגיש כמו
+                נשיקה של סבתא קפריסאית.</p>
+            <ul>
+                <li><a href="https://goo.gl/maps/kTVWyhr4vuLSQeeN6" target="_blank">Militzis Taverna</a> – כבש צלוי
+                    בתנור עצים, מוסקה מטריפה</li>
+                <li><a href="https://goo.gl/maps/RXK7eJPXmcGwGcQw8" target="_blank">Zephyros Fish Tavern</a> – קלמרי
+                    פריך, דגים על הגריל, אווירת ים</li>
+                <li><a href="https://goo.gl/maps/EyweuRZ3NcHK9j9p6" target="_blank">To Kafe Tis Chrysanthis</a> –
+                    אוכל
+                    ביתי, קישואים ממולאים, גבינה מותכת</li>
+            </ul>
+            <p><strong>יין מומלץ:</strong> Commandaria – קינוח בבקבוק 🍷</p>
+            <table>
+                <tr>
+                    <th>ארוחה</th>
+                    <th>טווח מחיר</th>
+                </tr>
+                <tr>
+                    <td>מנת צהריים</td>
+                    <td>15–25€</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>🚶‍♂ 15:00–17:00 – טיול עיכול באווירה</h2>
+        <div class="card">
+            <p>אחרי ארוחה טובה – יוצאים לשיטוט רגוע, קפה, גלידה ואווירה.</p>
+            <ul>
+                <li><a href="https://goo.gl/maps/h6x3xkU6h9pboE8Z8" target="_blank">טיילת Finikoudes</a> – עצי דקל,
+                    בריזה, אנשים יפים</li>
+                <li><a href="https://goo.gl/maps/wqemE8McoRGfbTzX7" target="_blank">Larnaca Castle</a> – מבצר ישן
+                    מול
+                    הים</li>
+                <li><a href="https://goo.gl/maps/bhxY4sDrnDJuMXzt9" target="_blank">Pierides Museum</a> – מוזיאון
+                    קטן
+                    ורגוע</li>
+            </ul>
+            <p>☕ <a href="https://goo.gl/maps/cGC7NWq3m1cKZ9cDA" target="_blank">Paul’s Coffee Roasters</a> – קפה קר
+                עם
+                קרואסון חמאתי</p>
+        </div>
+    </section>
+    <section>
+        <h2>🌇 19:00–21:00 – ערב: ארוחת שף ויין</h2>
+        <div class="card">
+            <p>השמש שוקעת, הזמן לארוחת ערב מושקעת עם מוזיקה, אווירה, קוקטיילים וטעמים מקומיים.</p>
+            <ul>
+                <li><a href="https://goo.gl/maps/bYFXJY9Z7x5m5U8z9" target="_blank">Art Café 1900</a> – פיוז'ן
+                    קפריסאי
+                    ואווירה חיה</li>
+                <li><a href="https://goo.gl/maps/xBwQJwsUzmzTzydQ9" target="_blank">The Enigma</a> – יוקרתי, חוויה
+                    קולינרית</li>
+                <li><a href="https://goo.gl/maps/GXt6xw5W7yC6w5Fx6" target="_blank">Almar Seafood Bar</a> – מול הים,
+                    קוקטיילים</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>פריט</th>
+                    <th>מחיר</th>
+                </tr>
+                <tr>
+                    <td>עיקרית</td>
+                    <td>20–30€</td>
+                </tr>
+                <tr>
+                    <td>יין/קוקטייל</td>
+                    <td>7–12€</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>🕺 22:00–01:00 – לילה: לרקוד עד שהלב מתמלא</h2>
+        <div class="card">
+            <p>מוזיקה חיה, מסיבות חוף או קלאב? בלרנקה יש הכול.</p>
+            <ul>
+                <li><a href="https://goo.gl/maps/3MRs3QEZjXeVGV4u9" target="_blank">Savino Live</a> – הופעות חיות,
+                    רוק
+                    ובלוז</li>
+                <li><a href="https://goo.gl/maps/BVZ7Qaa3uA3vVUkP8" target="_blank">Club DEEP</a> – דאנס, וייב צעיר
+                </li>
+                <li><a href="https://goo.gl/maps/yvGxKpoTVFQwSBgv7" target="_blank">Ammos Beach Bar</a> – מסיבת חוף
+                    תחת
+                    כוכבים</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h2>💰 סיכום כללי</h2>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>קטגוריה</th>
+                    <th>טווח מחיר</th>
+                </tr>
+                <tr>
+                    <td>תחבורה בעיר</td>
+                    <td>35–45€</td>
+                </tr>
+                <tr>
+                    <td>אוכל ושתייה</td>
+                    <td>80–120€</td>
+                </tr>
+                <tr>
+                    <td>בילויים בלילה</td>
+                    <td>30–50€</td>
+                </tr>
+                <tr>
+                    <td><strong>סה"כ יומי</strong></td>
+                    <td><strong>145–215€</strong></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>🎒 מה להביא איתך?</h2>
+        <div class="card">
+            <ul>
+                <li>סנדלים נוחות</li>
+                <li>קרם הגנה SPF 50</li>
+                <li>בגדי ים + מגבת</li>
+                <li>חולצה לערב</li>
+                <li>מצב רוח של מלך 👑</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        Shay&Naama © 2025
+    </footer>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+
+</html>
